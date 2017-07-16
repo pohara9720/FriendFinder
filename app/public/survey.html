@@ -1,0 +1,208 @@
+<style>
+h1 {
+    font-size: 35px !important;
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Friend Finder</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="name" type="text" class="validate">
+                        <label for="email" data-error="wrong" data-success="right">Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="photo" type="text" class="validate">
+                        <label for="email" data-error="wrong" data-success="right">Photo</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="input-field col s12">
+            <h1>You like to hang out with a lot of different people</h1>
+            <select id="q1">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1"> 1) Strong Agree</option>
+                <option value="2"> 2) Agree</option>
+                <option value="3"> 3) Nuetral</option>
+                <option value="3"> 4) Disagree</option>
+                <option value="3"> 5) Strongly Disagree</option>
+            </select>
+        </div>
+        <div class="input-field col s12">
+            <h1>You enjoy a quiet night at home</h1>
+            <select id="q2">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1"> 1) Strong Agree</option>
+                <option value="2"> 2) Agree</option>
+                <option value="3"> 3) Nuetral</option>
+                <option value="3"> 4) Disagree</option>
+                <option value="3"> 5) Strongly Disagree</option>
+            </select>
+        </div>
+        <div class="input-field col s12">
+            <h1>You like to drink and go out</h1>
+            <select id="q3">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1"> 1) Strong Agree</option>
+                <option value="2"> 2) Agree</option>
+                <option value="3"> 3) Nuetral</option>
+                <option value="3"> 4) Disagree</option>
+                <option value="3"> 5) Strongly Disagree</option>
+            </select>
+        </div>
+        <div class="input-field col s12">
+            <h1>Looks are just as important as personality</h1>
+            <select id="q4">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1"> 1) Strong Agree</option>
+                <option value="2"> 2) Agree</option>
+                <option value="3"> 3) Nuetral</option>
+                <option value="3"> 4) Disagree</option>
+                <option value="3"> 5) Strongly Disagree</option>
+            </select>
+        </div>
+        <div class="input-field col s12">
+            <h1>You are family oriented</h1>
+            <select id="q5">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1"> 1) Strong Agree</option>
+                <option value="2"> 2) Agree</option>
+                <option value="3"> 3) Nuetral</option>
+                <option value="3"> 4) Disagree</option>
+                <option value="3"> 5) Strongly Disagree</option>
+            </select>
+        </div>
+        <div class="input-field col s12">
+            <h1>You are ambitious</h1>
+            <select id="q6">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1"> 1) Strong Agree</option>
+                <option value="2"> 2) Agree</option>
+                <option value="3"> 3) Nuetral</option>
+                <option value="3"> 4) Disagree</option>
+                <option value="3"> 5) Strongly Disagree</option>
+            </select>
+        </div>
+        <div class="input-field col s12">
+            <h1>You solve problems no matter how difficult they seem</h1>
+            <select id="q7">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1"> 1) Strong Agree</option>
+                <option value="2"> 2) Agree</option>
+                <option value="3"> 3) Nuetral</option>
+                <option value="3"> 4) Disagree</option>
+                <option value="3"> 5) Strongly Disagree</option>
+            </select>
+        </div>
+        <div class="input-field col s12">
+            <h1>If it aint foreign its borin</h1>
+            <select id="q8">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1"> 1) Strong Agree</option>
+                <option value="2"> 2) Agree</option>
+                <option value="3"> 3) Nuetral</option>
+                <option value="3"> 4) Disagree</option>
+                <option value="3"> 5) Strongly Disagree</option>
+            </select>
+        </div>
+        <div class="input-field col s12">
+            <h1>Sex is a key factor in relationships</h1>
+            <select id="q9">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1"> 1) Strong Agree</option>
+                <option value="2"> 2) Agree</option>
+                <option value="3"> 3) Nuetral</option>
+                <option value="3"> 4) Disagree</option>
+                <option value="3"> 5) Strongly Disagree</option>
+            </select>
+        </div>
+        <div class="input-field col s12">
+            <h1>I want a bunch of little babies in my future</h1>
+            <select id="q10">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1"> 1) Strong Agree</option>
+                <option value="2"> 2) Agree</option>
+                <option value="3"> 3) Nuetral</option>
+                <option value="3"> 4) Disagree</option>
+                <option value="3"> 5) Strongly Disagree</option>
+            </select>
+        </div>
+        <center>
+            <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+            <a href="/">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Home
+                    <i class="material-icons right">home</i>
+                </button>
+            </a>
+        </center>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+
+
+        $("#submit").on("click", function() {
+            var name = $("#name").val().trim();
+            var photo = $("#photo").val().trim();
+            var scores = [];
+            var a = $("#q1").val();
+            var b = $("#q2").val();
+            var c = $("#q3").val();
+            var d = $("#q4").val();
+            var e = $("#q5").val();
+            var f = $("#q6").val();
+            var g = $("#q7").val();
+            var i = $("#q8").val();
+            var o = $("#q9").val();
+            var h = $("#q10").val();
+            scores.push(a,b,c,d,e,f,g,h,o,i);
+
+            var newFriend = {
+                name: name,
+                photo: photo,
+                scores: scores
+            }
+            console.log(newFriend);
+
+            $.post("/list", newFriend).done(function(data, err) {
+                if (err) throw err;
+                console.log(data);
+
+            });
+              $.post("/survey", newFriend).done(function(data, err) {
+                if (err) throw err;
+                console.log(data);
+
+            });
+        });
+
+
+        $('select').material_select();
+
+    });
+    </script>
+</body>
+
+</html>
