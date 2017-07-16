@@ -140,24 +140,37 @@ app.post("/list", (req, res) => {
 app.post("/survey", (req, res) => {
     console.log(req.body);
     var userArray = req.body;
-    for (i = 0; i < userArray.scores.length; i++) {
-        diffArray = [];
+    console.log(userArray);
+    var totalDifference = 0;
 
-        for (i = 0; i < friendArray.length; i++) {
-
-            var difference = userArray.scores[i] - friendArray[i];
-            diffArray.push(difference);
-
-
-        }
+// if the arrays are always the same length, you only need to iterate over one of them
+for (var i = 0; i < userArray.scores.length; i++) {
+    // subtract larger from smaller and add to totalDiff
+    if (userArray.scores.length[i] > friendArray[i]) {
+        totalDifference += userArray.scores[i] - friendArray[i];
+    } else {
+        totalDifference += friendArray[i] - userArray.scores[i];   
     }
-    console.log(diffArray);
+}
+console.log("totalDiff:", totalDifference);
+//     for (i = 0; i < userArray.scores.length; i++) {
+//         diffArray = [];
 
-    function getSum(total, num) {
-        return total + num;
-    }
-    var result = diffArray.reduce(getSum)
-    console.log(result);
+//         for (i = 0; i < friendArray.length; i++) {
+
+//             var difference = userArray.scores[i] - friendArray[i];
+//             diffArray.push(difference);
+
+
+//         }
+//     }
+//     console.log(diffArray);
+
+//     function getSum(total, num) {
+//         return total + num;
+//     }
+//     var result = diffArray.reduce(getSum)
+//     console.log(result);
 });
 
 
