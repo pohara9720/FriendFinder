@@ -131,46 +131,48 @@ app.get("/list", (req, res) => {
 })
 
 app.post("/list", (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     var addedFriend = req.body;
     friendArray.push(addedFriend);
     res.json(addedFriend);
 });
 
 app.post("/survey", (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     var userArray = req.body;
     console.log(userArray);
-    var totalDifference = 0;
+//     var totalDifference = 0;
 
-// if the arrays are always the same length, you only need to iterate over one of them
-for (var i = 0; i < userArray.scores.length; i++) {
-    // subtract larger from smaller and add to totalDiff
-    if (userArray.scores.length[i] > friendArray[i]) {
-        totalDifference += userArray.scores[i] - friendArray[i];
-    } else {
-        totalDifference += friendArray[i] - userArray.scores[i];   
+// // if the arrays are always the same length, you only need to iterate over one of them
+// for (var i = 0; i < userArray.scores.length; i++) {
+//     // subtract larger from smaller and add to totalDiff
+//     if (userArray.scores.length[i] > friendArray[i]) {
+//         totalDifference += userArray.scores[i] - friendArray[i];
+//     } else {
+//         totalDifference += friendArray[i] - userArray.scores[i];   
+//     }
+// }
+// console.log("totalDiff:", totalDifference);
+// res.json(totalDifference);
+
+    for (i = 0; i < userArray.scores.length; i++) {
+        diffArray = [];
+
+        for (i = 0; i < friendArray.length; i++) {
+
+            var difference = userArray.scores[i] - friendArray.scores[i];
+            diffArray.push(difference);
+
+
+        }
     }
-}
-console.log("totalDiff:", totalDifference);
-//     for (i = 0; i < userArray.scores.length; i++) {
-//         diffArray = [];
+    console.log(diffArray);
 
-//         for (i = 0; i < friendArray.length; i++) {
-
-//             var difference = userArray.scores[i] - friendArray[i];
-//             diffArray.push(difference);
-
-
-//         }
-//     }
-//     console.log(diffArray);
-
-//     function getSum(total, num) {
-//         return total + num;
-//     }
-//     var result = diffArray.reduce(getSum)
-//     console.log(result);
+    function getSum(total, num) {
+        return total + num;
+    }
+    var result = diffArray.reduce(getSum)
+    console.log(result);
 });
 
 

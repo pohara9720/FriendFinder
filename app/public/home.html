@@ -7,10 +7,27 @@ img {
 .card {
     height: 450px;
     width: 400px;
+    background-color: #9370DB !important; 
+    font-family: 'Gloria Hallelujah', cursive !important;
+    color: white;
 }
 
 .container {
     width: 90% !important;
+}
+nav, button {
+    background-color: #9400D3 !important;
+    font-family: 'Gloria Hallelujah', cursive !important;
+}
+/*body {
+    background-color: #C0C0C0 !important;
+}*/
+.pattern {min-height:200px;}
+
+#stripes1 {
+background: linear-gradient(90deg, rgba(255,255,255,0.3) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 0), #ccc;
+background-size:50px auto;
+background-color: #C0C0C0 !important;
 }
 </style>
 <!DOCTYPE html>
@@ -20,12 +37,13 @@ img {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Quicksand" rel="stylesheet">
     <script src="https://code.jquery.com/jquery.js"></script>
     <meta charset="UTF-8">
     <title>Friend Finder</title>
 </head>
 
-<body>
+<body id="stripes1" class="pattern">
     <nav>
         <div class="nav-wrapper">
             <a href="#" class="brand-logo center">Friend Finder</a>
@@ -63,7 +81,7 @@ img {
                 </button>
             </a>
             <a href="/list">
-                <button class="btn waves-effect waves-light" type="submit" name="action">List of Friends(Raw)
+                <button class="btn waves-effect waves-light" type="submit" name="action">List of Friends
                     <i class="material-icons right">send</i>
                 </button>
             </a>
