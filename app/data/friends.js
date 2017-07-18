@@ -170,6 +170,7 @@ app.post("/survey", (req, res) => {
     console.log("matchIndex  " + matchPosition);
     var match = friendArray[matchPosition];
     console.log(match);
+    res.send(match);
     
     
 
