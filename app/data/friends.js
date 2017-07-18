@@ -138,43 +138,42 @@ app.post("/list", (req, res) => {
 });
 
 app.post("/survey", (req, res) => {
-    // console.log(req.body);
     var userArray = req.body;
-    console.log(userArray);
-//     var totalDifference = 0;
-
-// // if the arrays are always the same length, you only need to iterate over one of them
-// for (var i = 0; i < userArray.scores.length; i++) {
-//     // subtract larger from smaller and add to totalDiff
-//     if (userArray.scores.length[i] > friendArray[i]) {
-//         totalDifference += userArray.scores[i] - friendArray[i];
-//     } else {
-//         totalDifference += friendArray[i] - userArray.scores[i];   
-//     }
-// }
-// console.log("totalDiff:", totalDifference);
-// res.json(totalDifference);
-
-    for (i = 0; i < userArray.scores.length; i++) {
-        diffArray = [];
-
-        for (i = 0; i < friendArray.length; i++) {
-
-            var difference = userArray.scores[i] - friendArray.scores[i];
-            diffArray.push(difference);
 
 
+    var diffArray = [];
+    for (var i = 0; i < friendArray.length; i++) {
+        var diff = 0;
+
+        for (var j = 0; j < userArray.scores.length; j++) {
+            var difference = Math.abs(userArray.scores[j] - friendArray[i].scores[j]);
+            diff += difference;
+        }
+        diffArray.push(diff);
+        console.log(diffArray);
+    }
+    // console.log("difference array " + diffArray);
+    // var minimum = Math.min(parseFloat(diffArray));
+    // console.log("user scores " + userArray.scores);
+    // console.log("smallest: " + minimum);
+    var minimum = diffArray[0];
+
+    for (var x = 1; x < diffArray.length; x++) {
+        if (diffArray[x] < minimum) {
+            minimum = diffArray[x];
         }
     }
-    console.log(diffArray);
 
-    function getSum(total, num) {
-        return total + num;
-    }
-    var result = diffArray.reduce(getSum)
-    console.log(result);
+    console.log("smallest: " + minimum);
+
+    var matchPosition = diffArray.indexOf(minimum);
+    console.log("matchIndex  " + matchPosition);
+    var match = friendArray[matchPosition];
+    console.log(match);
+    
+    
+
 });
-
 
 app.listen(port, () => {
     console.log("App listening on PORT " + port);
