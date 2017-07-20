@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const $ = require("jquery")
 const app = express();
-const port = 9000;
+var port = process.env.PORT || 9000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,6 +15,6 @@ require("./app/routing/htmlRoutes")(app);
 
 
 
-app.listen(port, () => {
+ app.listen(port, function() {
     console.log("App listening on PORT " + port);
 });
