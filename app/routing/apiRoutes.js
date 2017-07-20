@@ -34,7 +34,7 @@ module.exports = function(app) {
         var matchPosition = diffArray.indexOf(minimum);
         console.log("matchIndex  " + matchPosition);
         var match = friendArray[matchPosition];
-        console.log("This is your match!: "match);
+        console.log("This is your match!: " + match);
         res.send(match);
 
 
