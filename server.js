@@ -1,7 +1,6 @@
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
-const $ = require("jquery")
 const app = express();
 var port = process.env.PORT || 9000;
 
