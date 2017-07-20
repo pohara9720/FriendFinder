@@ -39,7 +39,7 @@ li{
     font-family: 'Quicksand', sans-serif;
 }
 span{
-    color:#C0C0C0 ;
+    color:#C0C0C0 !important ;
     font-family: 'Quicksand', sans-serif !important;
 }
 .pattern {min-height:200px;}
@@ -85,11 +85,11 @@ label{
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="name" type="text" class="validate">
-                        <label for="email" data-error="wrong" data-success="right">Name</label>
+                        <label for="email" data-error="wrong">Name</label>
                     </div>
                     <div class="input-field col s12">
                         <input id="photo" type="text" class="validate">
-                        <label for="email" data-error="wrong" data-success="right">Photo Link</label>
+                        <label for="email" data-error="wrong">Photo Link</label>
                     </div>
                 </div>
             </form>
@@ -208,8 +208,8 @@ label{
             <a id="submit" class="waves-effect waves-light btn" href="#modal1">Submit <i class="material-icons right">send</i></a>
             <div id="modal1" class="modal">
                 <div class="modal-content">
-                    <h4 id="matchName">Kylie</h4>
-                    <img id="matchPic" src=https://s-media-cache-ak0.pinimg.com/originals/42/2a/06/422a06911213153e475cac830cd20673.jpg>
+                    <h4 id="matchName"></h4>
+                    <img id="matchPic">
                 </div>
                 <div class="modal-footer">
                     <center><a id="close" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a></center>
@@ -225,10 +225,8 @@ label{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-
-
-
-        $("#submit").on("click", function() {
+        $("#submit").on("click", function(event) {
+            event.preventDefault();
             var name = $("#name").val().trim();
             var photo = $("#photo").val().trim();
             var scores = [];
@@ -243,24 +241,20 @@ label{
             var o = $("#q9").val();
             var h = $("#q10").val();
             scores.push(a, b, c, d, e, f, g, h, o, i);
-
             var newFriend = {
                 name: name,
                 photo: photo,
                 scores: scores
             }
-            console.log(newFriend);
-
-            $.post("/list", newFriend).done(function(data, err) {
-                if (err) throw err;
-                console.log(data);
+            $.post("/survey", newFriend).done(function(data) {
+                // if (err) throw err;
+                console.log("/survey data", data);
+                $("#matchName").html(data.name);
+                $("#matchPic").attr("src",data.photo);
 
             });
-            $.post("/survey", newFriend).done(function(data, err) {
+            $.post("/list", newFriend).done(function(data) {
                 if (err) throw err;
-                console.log(data);
-                
-
             });
         });
 
