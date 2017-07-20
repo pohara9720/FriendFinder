@@ -1,5 +1,5 @@
 var friendArray = require("../data/friends");
-console.log(friendArray);
+// console.log(friendArray);
 
 
 module.exports = function(app) {
@@ -34,7 +34,7 @@ module.exports = function(app) {
         var matchPosition = diffArray.indexOf(minimum);
         console.log("matchIndex  " + matchPosition);
         var match = friendArray[matchPosition];
-        console.log(match);
+        console.log("This is your match!: "match);
         res.send(match);
 
 
