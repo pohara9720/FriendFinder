@@ -7,7 +7,7 @@ img {
 .card {
     height: 450px;
     width: 400px;
-    background-color: #9370DB !important; 
+    background-color: #9370DB !important;
     font-family: 'Gloria Hallelujah', cursive !important;
     color: white;
 }
@@ -15,19 +15,35 @@ img {
 .container {
     width: 90% !important;
 }
-nav, button {
+
+nav,
+button {
     background-color: #9400D3 !important;
     font-family: 'Gloria Hallelujah', cursive !important;
 }
+
+
 /*body {
     background-color: #C0C0C0 !important;
 }*/
-.pattern {min-height:200px;}
+
+.pattern {
+    min-height: 200px;
+}
 
 #stripes1 {
-background: linear-gradient(90deg, rgba(255,255,255,0.3) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 0), #ccc;
-background-size:50px auto;
-background-color: #C0C0C0 !important;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 0), #ccc;
+    background-size: 50px auto;
+    background-color: #C0C0C0 !important;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .card {
+        width: 350px;
+    }
+    button{
+        margin:5px !important;
+    }
 }
 </style>
 <!DOCTYPE html>
@@ -70,7 +86,7 @@ background-color: #C0C0C0 !important;
                     <a class="carousel-item" href="#four!"><img src="https://thumbs.dreamstime.com/z/funny-looking-young-man-wearing-headband-sunglasses-29781972.jpg"></a>
                     <a class="carousel-item" href="#five!"><img src="http://www.newhdwallpapers.in/wp-content/uploads/2015/10/Smile-Model-Girls-Photography.jpg"></a>
                     <a class="carousel-item" href="#five!"><img src="http://newskyproductions.com/wp-content/uploads/2014/06/MG_2988-700.jpg"></a>
-                  <a class="carousel-item" href="#two!"><img src="https://s-media-cache-ak0.pinimg.com/originals/42/2a/06/422a06911213153e475cac830cd20673.jpg"></a>
+                    <a class="carousel-item" href="#two!"><img src="https://s-media-cache-ak0.pinimg.com/originals/42/2a/06/422a06911213153e475cac830cd20673.jpg"></a>
                 </div>
             </div>
         </div>
